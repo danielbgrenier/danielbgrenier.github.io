@@ -5,6 +5,8 @@ header{
     background-color: lightgray;
     color:black;
     border: 2px solid;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 body{
     background-color: lightskyblue;
