@@ -5,28 +5,29 @@ header{
     background-color: lightgray;
     color:black;
     border: 2px solid;
-    margin-left: 100px;
-    margin-right: 100px;
 }
 body{
     background-color: lightskyblue;
     text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 .inline-block{
     display: inline-block;
-    padding-left: 50px;
-    padding-right: 50px
+    padding-left: 40px;
+    padding-right: 40px
 }
 footer{
     display: flow-root;
     background-color: lightgray;
     color:black;
     border: 2px solid;
-    margin-left: 100px;
-    margin-right: 100px;
 }
 #pfp{
     float: left;
     margin-left: 15px;
     margin-bottom: 15px;
+}
+p{
+    margin:10px;
 }
