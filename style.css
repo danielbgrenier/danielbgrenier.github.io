@@ -17,12 +17,15 @@
     font-size: 1.25em;
     min-width: 150px;
 }
+#mainmenu{
+    display: inline-block;
+    flex: left;
+}
 .navi a{
     color: black;
 }
 header{
     background-color: lightgray;
-    color:black;
     border: 2px solid;
 }
 body{
@@ -72,4 +75,26 @@ footer{
     margin-right: auto;
     width: 750px;
     max-width: 100%;
+}
+#babel{
+    font-family: 'Courier New', Courier, monospace;
+}
+#babel *{
+    font-family: 'Courier New', Courier, monospace;
+}
+#contents{
+    border: 2px solid;
+    float: right;
+    margin-left: 25px;
+}
+#contents a{
+    text-decoration: none;
+}
+#contents > ul{
+    padding-right: 15px;
+}
+#contents p{
+    text-align: center;
+    font-size: small;
+    text-decoration: underline;
 }
