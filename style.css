@@ -31,10 +31,6 @@ header{
 body{
     background-color: lightskyblue;
 }
-#crosswords{
-    text-align: center;
-    width: 100%;
-}
 .crossword{
     display: inline-block;
     margin: auto;
