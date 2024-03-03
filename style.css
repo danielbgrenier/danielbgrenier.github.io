@@ -32,8 +32,7 @@ body{
     background-color: lightskyblue;
 }
 #crosswords{
-    display: flex;
-    flex-wrap: wrap;
+    text-align: center;
 }
 .crossword{
     display: inline-block;
