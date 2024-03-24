@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DG - Math</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <header>
@@ -13,20 +15,94 @@
         <hr color="black">
         <div id="navi_bar">
             <div class="navi">
-                <a href="index.html">Home</a>
+                <a href="/index.html">Home</a>
             </div><div class="navi">
-                <a href="math.html">Math</a>
+                <a href="/math.html">Math</a>
             </div><div class="navi">
-                <a href="coursework/index.html">Coursework</a>
+                <a href="/coursework/index.html">Coursework</a>
             </div><div class="navi">
-                <a href="puzzles.html">Puzzles</a>
+                <a href="/puzzles.html">Puzzles</a>
             </div><div class="navi">
-                <a href="interests.html">Interests</a>
+                <a href="/interests/index.html">Interests</a>
             </div><div class="navi">
-                <a href="aboutme.html">About Me</a>
+                <a href="/aboutme.html">About Me</a>
             </div>
         </div>
     </header>
+
+    <br>
+
+    <div class="pagesection">
+        <h3>Permutations of n objects among n people</h3>
+        <p>A poor title for something I found</p>
+        <hr color="black" size="1px">
+        <p>
+            This is an interesting problem I discovered and have been trying to work through with only my own knowledge and
+            methods. It likely already exists under a more accurate and technical name somewhere in combinatorics or graph theory,
+            but for now this is all my own work.
+            I was playing a game which involved each player writing on a piece of paper, then passing it to somebody else.
+            There were n players, so n pieces of paper, and each player was to receive each paper exactly once, so a total
+            of n-1 rounds. Furthermore, each player should receive a piece of paper from each other player, and in turn give
+            a piece of paper to each other player, again exactly once by necessity. For what number(s) of players is it possible
+            to fulfill all these conditions and how many different ways can the papers be passed?
+            <br><br>
+            We will start with a numbering of the rules to reference later:
+            <ol>
+                <li>Each player must receive each paper exactly once</li>
+                <li>Each player must receive a paper from each other player exactly once</li>
+                <li>Each player must pass a paper to each other player exactly once (corollary of 2)</li>
+            </ol>
+            Beginning with the simplest case, n=2, it is clear that there is exactly one solution (in fact only one candidate at all),
+            which is for both players to swap pieces of paper. For n=3, it appears at first to be impossible (which I will show later
+            is correct), as after all three players rotate papers, the only way for each player to receive a paper they have not
+            seen yet is by rotating the same direction again, violating rule 2. To understand why this is, we will consider rule 3.
+            If we imagine the players standing in a circle, with 3 people player A must pass once to the left and once to the right
+            to fulfill rule 3. However this will result in any paper 
+
+        </p>
+    </div>
+
+    <br><hr color="black"><br>
+
+    <div class="pagesection">
+        <h3>The Collatz Conjecture</h3>
+        <hr color="black" size="1px">
+        <p>
+            Like any self respecting math major, I've tried my hand at solving the Collatz conjecture (to no avail [yet]).
+            These are the different methods I've looked into and how far I got into all of them, but first some defintions.
+            <br><br>
+            First, the function I will be using is
+            <p>\[H^x(n) = \begin{cases}
+                n/2 & n \equiv 0\mod{2}\\
+                3n+1 & n \equiv 1\mod{2}
+                \end{cases}\]</p>
+            Where n is a natural number and x is the x-th iteration of the function (H is for Hailstone). So,
+            \[H^3(5) = H^2(3\cdot 5 + 1) = H^2(16) = H^1\left(\frac{16}{2}\right) = H^1(8) = H^0\left(\frac{8}{2}\right) = H^0(4) = 4\]
+            Or, more simply,
+            \[H^3(5) = 4\]
+            <br><br>
+            Second, we should define what exactly the conjecture is. What Collatz proposed was that for any natural number
+            \(n\), repeated iterations of the function would eventually result in that number reaching 1 (more specifically the 4-2-1 cycle).
+            To use the notation layed out earlier:
+            \[\forall n \in \mathbb{N}: \lim_{x\to\infty} H^x(n) = 1\]
+            <p style="font-size: small;">NOTE: This is an abuse of notation because the limit of any n as x approaches infinity
+            does not exist (or is infinite), as with our notation there is no stop to the 4-2-1 cycle.</p>
+            The path each number takes when iterated is called its hailstone sequence, or just sequence.
+            For example, the hailstone sequence of 3 is:
+            \[3 \to 10 \to 5 \to 16 \to 8 \to 4 \to 2 \to 1 \to 4 \to 2 \to 1 \to ...\]
+            Note that for every natural number anyone has ever tried, the sequence generated ends in the 4-2-1 cycle. For our purposes,
+            we will cut the hailstone sequence of each number once it reaches 1.
+            Now we can begin on the actual math part. The first question to ask is how to prove (or disprove) the conjecture.
+            Proving the conjecture can be done two ways: forwards or backwards.
+            To prove the Collatz Conjecture in the forwards direction, we would need to show that any number in the
+            series eventually becomes 1. This is simple to state, but extremely difficult to prove, especially with
+            arbitrary numbers. This can be made slightly easier by loosening this constraint, requiring numbers only
+            smaller at some point in their cycle. That is,
+            \[\forall n \in \mathbb{N}-\{1\} \exists x \mid H^x(n) \lt n\]
+            Since the Hailstone function only operates on the natural numbers, \(H^x(n)\) is a natural number for every
+            x and n. Therefore, if we can prove this for each and every n, then each chain
+        </p>
+    </div>
 
     <div id="tempbox">
         <p class="temptext">Once I figure out how exactly I want to lay this all out, this is where</p>
@@ -41,7 +117,7 @@
         <div id="pfp_container">
             <a href="https://en.wikipedia.org/wiki/Cool_(aesthetic)?useskin=vector"
             target="_blank">
-                <img src="images/me2.jpg" id="pfp" height="200">
+                <img src="/images/me2.jpg" id="pfp" height="200">
             </a>
             <p align="center">
                 Statistics student at Colorado School of Mines,
@@ -50,7 +126,7 @@
             </p>
             <br>
             <p align="center">
-                <a href="pdfs/Daniel Grenier Resume.pdf" target="_blank">Resumé</a>
+                <a href="/pdfs/Daniel Grenier Resume.pdf" target="_blank">Resumé</a>
             </p>
         </div>
     </footer>
